@@ -1,15 +1,14 @@
 public class Vehicle {
 
-    Owner ownerObj;
     int slotNo;
     int parkingDuration;
     String vehicleNo,vehicleType;
 
+    Owner ownerObj;
+
     public Vehicle() { }
 
-    public Vehicle(Owner owner,String s1,int i1,String s2,int i2) {
-
-    }
+    public Vehicle(Owner owner,String s1,int i1,String s2,int i2) { }
 
     public Owner getOwner() {
         return ownerObj;

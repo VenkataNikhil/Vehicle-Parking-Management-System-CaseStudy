@@ -1,4 +1,3 @@
-import com.sun.org.apache.xpath.internal.SourceTree;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,18 +12,15 @@ public class ParkingManagement implements VehicleParking{
     static int[] twoWh,car,truck;
     static int c1,c2,c3,owncount;
 
-    @Override
     public boolean addVehicleToSlot(Vehicle vehicle) {
 
         return false;
     }
 
-    @Override
     public int countUnassignedVehicles() {
         return owncount;
     }
 
-    @Override
     public ArrayList<Vehicle> getAllVehicles(String s) {
         ret_list = new ArrayList<Vehicle>();
         if (s.contains("two"))
@@ -53,7 +49,6 @@ public class ParkingManagement implements VehicleParking{
         return ret_list;
     }
 
-    @Override
     public HashMap<String, Integer> getCountAllVehicles() {
         HashMap<String,Integer> hashmap = new HashMap<String,Integer>();
         hashmap.put("two",twoWh_list.size());
@@ -62,7 +57,6 @@ public class ParkingManagement implements VehicleParking{
         return hashmap;
     }
 
-    @Override
     public boolean updateAllottedTime(int i, String s) {
         vehicle.setParkingDuration(i);
         return false;
@@ -135,10 +129,10 @@ public class ParkingManagement implements VehicleParking{
 
         vehicle = new Vehicle();
 
-        System.out.println("Enter parking duration time: ");
+        System.out.println("Enter parking duration time ");
         vehicle.setParkingDuration(s.nextInt());
 
-        System.out.println("Enter vehicle no: ");
+        System.out.println("Enter vehicle number ");
         vehicle.setVehicleNo(s.next());
 
         System.out.println("Enter vehicle type ");
@@ -146,7 +140,7 @@ public class ParkingManagement implements VehicleParking{
 
         System.out.println("Do you want to enter the owner details: ");
         String check = s.next();
-        if((check.contains("Y"))||(check.contains("y"))) {
+        if(check.equalsIgnoreCase("y")) {
             Owner owner = new Owner();
             System.out.println("Enter the name of the Owner ");
             owner.setOwnerName(s.next());
@@ -163,15 +157,12 @@ public class ParkingManagement implements VehicleParking{
             vehicle.setOwner(owner);
         }
 
-        else {
-            owncount++; }
+        else { owncount++; }
 
         System.out.println("Enter slot no: ");
         int slot = s.nextInt();
         checkForException(slot);
         enterSlot(vehicle,vehicle.getVehicleType().toLowerCase(),slot);
-
-
         System.out.println(c1+" "+c2+" "+c3);
     }
 
@@ -238,6 +229,4 @@ public class ParkingManagement implements VehicleParking{
             }
         }
     }
-
-    private void sortVehicle(String s) { }
 }
