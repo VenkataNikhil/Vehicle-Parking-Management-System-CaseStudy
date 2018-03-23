@@ -5,9 +5,7 @@ public class Owner {
     String ownerEmail;
     Long mobileNo;
 
-    public Owner() {
-
-    }
+    public Owner() { }
 
     public Owner(String ownerName, String ownerAddress, String ownerEmail, Long mobileNo) {
         this.ownerName = ownerName;

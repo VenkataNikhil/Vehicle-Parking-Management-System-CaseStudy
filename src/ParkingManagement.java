@@ -198,7 +198,7 @@ public class ParkingManagement implements VehicleParking{
             }
             else {
                 try {
-                    throw new SlotNotFoundException("No slot allotted!");
+                    throw new SlotNotFoundException("No slot allotted");
                 }
                 catch (SlotNotFoundException e){
                     e.printStackTrace();
@@ -214,7 +214,7 @@ public class ParkingManagement implements VehicleParking{
             }
             else {
                 try {
-                    throw new SlotNotFoundException("No slot allotted!");
+                    throw new SlotNotFoundException("No slot allotted");
                 }
                 catch (SlotNotFoundException e){
                     e.printStackTrace();
@@ -230,7 +230,7 @@ public class ParkingManagement implements VehicleParking{
             }
             else {
                 try {
-                    throw new SlotNotFoundException("No slot allotted!");
+                    throw new SlotNotFoundException("No slot allotted");
                 }
                 catch (SlotNotFoundException e){
                     e.printStackTrace();
@@ -239,7 +239,5 @@ public class ParkingManagement implements VehicleParking{
         }
     }
 
-    private void sortVehicle(String s) {
-
-    }
+    private void sortVehicle(String s) { }
 }

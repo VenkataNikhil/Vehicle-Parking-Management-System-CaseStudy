@@ -1,12 +1,11 @@
 public class Vehicle {
 
     Owner ownerObj;
-    int slotNo,parkingDuration;
+    int slotNo;
+    int parkingDuration;
     String vehicleNo,vehicleType;
 
-    public Vehicle() {
-
-    }
+    public Vehicle() { }
 
     public Vehicle(Owner owner,String s1,int i1,String s2,int i2) {
 

@@ -7,9 +7,10 @@ public interface VehicleParking {
 
     int  countUnassignedVehicles();
 
-    ArrayList<Vehicle> getAllVehicles(String s);
-
     HashMap<String,Integer> getCountAllVehicles();
 
     boolean updateAllottedTime(int i,String s);
+
+    ArrayList<Vehicle> getAllVehicles(String s);
+
 }
