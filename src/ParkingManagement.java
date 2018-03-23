@@ -26,7 +26,6 @@ public class ParkingManagement implements VehicleParking{
 
     @Override
     public ArrayList<Vehicle> getAllVehicles(String s) {
-//        s = s.toLowerCase();
         ret_list = new ArrayList<Vehicle>();
         if (s.contains("two"))
             ret_list = twoWh_list;
@@ -82,14 +81,14 @@ public class ParkingManagement implements VehicleParking{
 
         boolean j=true;
 
-        while(j) {
-            System.out.println("Enter your choice\n");
-            System.out.println("1.Add Vehicle");
+        do {
+            System.out.println("1. Add Vehicle");
             System.out.println("2. Update Allotted time ");
             System.out.println("3. get Count of all vehicles");
             System.out.println("4. get all vehicles of a certain category: ");
             System.out.println("5. Count unassigned vehicles ");
             System.out.println("6.EXIT");
+            System.out.println("Enter your choice\n");
             int choice = s.nextInt();
 
             switch(choice) {
@@ -121,7 +120,7 @@ public class ParkingManagement implements VehicleParking{
 
                 default: System.exit(0);
             }
-        }
+        }while(j);
     }
 
     private static void vehicleDetails() {
@@ -147,7 +146,7 @@ public class ParkingManagement implements VehicleParking{
 
         System.out.println("Do you want to enter the owner details: ");
         String check = s.next();
-        if(check.contains("Y")||check.contains("y")) {
+        if((check.contains("Y"))||(check.contains("y"))) {
             Owner owner = new Owner();
             System.out.println("Enter the name of the Owner ");
             owner.setOwnerName(s.next());
@@ -165,8 +164,7 @@ public class ParkingManagement implements VehicleParking{
         }
 
         else {
-            owncount++;
-        }
+            owncount++; }
 
         System.out.println("Enter slot no: ");
         int slot = s.nextInt();
@@ -175,7 +173,6 @@ public class ParkingManagement implements VehicleParking{
 
 
         System.out.println(c1+" "+c2+" "+c3);
-        //System.out.println(vehicle.getParkingDuration()+" "+vehicle.getSlotNo());
     }
 
     private static void checkForException(int slot) {
@@ -191,7 +188,7 @@ public class ParkingManagement implements VehicleParking{
             vehicle.setSlotNo(slot);
     }
 
-    private static void enterSlot(Vehicle vehicle,String vehicleType,int slot) {
+    private static void enterSlot(Vehicle vehicle,String vehicleType, int slot) {
 
         if(vehicleType.contains("two")) {
             if (twoWh[slot] != 1) {
